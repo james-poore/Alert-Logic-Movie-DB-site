@@ -81,5 +81,8 @@
           .mainThing.col-md-12.col-xs-12
             =yield
 
+    / jQuery (necessary for Bootstrap's JavaScript plugins)
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
+
     / compiled and minified Bootstrap JavaScript
     %script{:src => "/js/bootstrap.min.js"}

@@ -12,7 +12,7 @@ set :environment, :development
 
 
 # TMDB Configuration
-tmdb_api_key_file = File.open("config/tmdb_api_key", mode = "r")
+tmdb_api_key_file = File.open(File.join(File.dirname(__FILE__), "config/tmdb_api_key"), mode = "r")
 Tmdb.api_key = tmdb_api_key_file.readline
 
 Tmdb.default_language = "en"

@@ -12,15 +12,8 @@ set :environment, :development
 
 
 # TMDB Configuration
-
-#Try to read API key from file, if file not present produce error and set key to nil
-begin
-	tmdb_api_key_file = File.open("config/tmdb_api_key", mode = "r")
-	Tmdb.api_key = tmdb_api_key_file.readline
-rescue
-	raise IOError, "The API key file could not be opened. Check that the file exists and the first line is the API key."
-	Tmdb.api_key = nil
-end
+tmdb_api_key_file = File.open("config/tmdb_api_key", mode = "r")
+Tmdb.api_key = tmdb_api_key_file.readline
 
 Tmdb.default_language = "en"
 

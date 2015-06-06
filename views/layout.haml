@@ -23,7 +23,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Brand
+          %a.navbar-brand{:href => "#"} tMDB Movie Search
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
@@ -32,10 +32,12 @@
                 Link
                 %span.sr-only (current)
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} Movies
+            %li
+              %a{:href => "#"} People
             %li.dropdown
               %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Dropdown
+                Movies
                 %span.caret
               %ul.dropdown-menu{:role => "menu"}
                 %li
@@ -50,27 +52,12 @@
                 %li.divider
                 %li
                   %a{:href => "#"} One more separated link
-          %form.navbar-form.navbar-left{:role => "search"}
+          %form.navbar-form.navbar-right{:role => "search"}
             .form-group
               %input.form-control{:placeholder => "Search", :type => "text"}/
             %button.btn.btn-default{:type => "submit"} Submit
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{:href => "#"} Link
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Dropdown
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#"} Action
-                %li
-                  %a{:href => "#"} Another action
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider
-                %li
-                  %a{:href => "#"} Separated link
+          /%ul.nav.navbar-nav.navbar-right
+
         / /.navbar-collapse
       / /.container-fluid
 

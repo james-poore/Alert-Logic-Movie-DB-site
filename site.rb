@@ -43,4 +43,8 @@ post '/search' do
 	@movies = TmdbMovie.find(:title => search_string, :expand_results => true)
 	@people = TmdbCast.find(:name => search_string, :expand_results => true)
 
+	pp @movies
+	puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+	pp @people
+
 end

@@ -35,26 +35,9 @@
               %a{:href => "#"} Movies
             %li
               %a{:href => "#"} People
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Movies
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#"} Action
-                %li
-                  %a{:href => "#"} Another action
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider
-                %li
-                  %a{:href => "#"} Separated link
-                %li.divider
-                %li
-                  %a{:href => "#"} One more separated link
-          %form.navbar-form.navbar-right{:role => "search"}
+          %form.navbar-form.navbar-right{:role => "search", :action => "/search", :method => "post", :enctype => "multipart/form-data"}
             .form-group
-              %input.form-control{:placeholder => "Search", :type => "text"}/
+              %input.form-control#nav-search-bar{:placeholder => "Search", :name => "search_string", :type => "text"}
             %button.btn.btn-default{:type => "submit"} Submit
           /%ul.nav.navbar-nav.navbar-right
 

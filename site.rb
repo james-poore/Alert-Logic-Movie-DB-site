@@ -25,12 +25,22 @@ get '/' do
 	haml :home
 end
 
-get '/movie/:movie_title' do |movie_title|
+get '/movie/:movie_id' do |movie_id|
 
 
 end
 
-get '/person/:person_name' do |person_name|
+get '/person/:person_id' do |person_id|
 
+
+end
+
+post '/search' do
+
+	search_string = params[:search_string]
+
+	#Seearch movies and people
+	@movies = TmdbMovie.find(:title => search_string, :expand_results => true)
+	@people = TmdbCast.find(:name => search_string, :expand_results => true)
 
 end

@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler'
 require 'ruby-tmdb3'
+require 'pp'
 
 Bundler.require
 

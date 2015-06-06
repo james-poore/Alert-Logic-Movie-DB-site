@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler'
-require 'ruby-tm'
+require 'ruby-tmdb3'
 
 Bundler.require
 

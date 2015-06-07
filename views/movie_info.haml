@@ -38,6 +38,10 @@
         %h5 No people found
       -else
         %table.table.table-hover#people-table
+          %thead
+            %tr
+              %th
+              %th
           %tbody
           -cast.each do |actor|
             %tr.cast-row

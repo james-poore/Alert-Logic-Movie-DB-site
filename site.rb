@@ -14,9 +14,9 @@ set :environment, :development
 
 # TMDB Configuration
 tmdb_api_key_file = File.open(File.join(File.dirname(__FILE__), "config/tmdb_api_key"), mode = "r")
-Tmdb::API.key(tmdb_api_key_file.readline)
+Tmdb::Api.key(tmdb_api_key_file.readline)
 
-Tmdb::API.language("en")
+Tmdb::Api.language("en")
 
 
 #Pages

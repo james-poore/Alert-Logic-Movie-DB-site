@@ -1,5 +1,5 @@
 -movies = locals[:movies]
--people = locals[:people]
+-actors = locals[:actors]
 
 .well.well-lg
   %div{:role => "tabpanel"}
@@ -8,7 +8,7 @@
       %li.active{:role => "presentation"}
         %a{"aria-controls" => "movies", "data-toggle" => "tab", :href => "#movies-tab-pane", :role => "tab"} Movies
       %li{:role => "presentation"}
-        %a{"aria-controls" => "people", "data-toggle" => "tab", :href => "#people-tab-pane", :role => "tab"} People
+        %a{"aria-controls" => "actors", "data-toggle" => "tab", :href => "#people-tab-pane", :role => "tab"} People
     / Tab panes
     .tab-content
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
@@ -29,11 +29,11 @@
         %br
         %ul.list-group
           / Dynamically list person results here
-          -if people.length == 0
+          -if actors.length == 0
             %h5 No people found
           -else
-            -people.each do |person|
-              %li.list-group-item #{person.name}
+            -actors.each do |actor|
+              %li.list-group-item #{actor.name}
 
 
 :javascript

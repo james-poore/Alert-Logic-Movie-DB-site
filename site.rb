@@ -42,18 +42,20 @@ post '/search' do
 
 	#Seearch movies and people
 	@movies = TmdbMovie.find(:title => search_string, :expand_results => true)
-	@people = TmdbCast.find(:name => search_string, :expand_results => true)
 
 	@movies.each do |movie|
 		puts movie.title
 		puts "-----------------------------"
 	end
 	puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	@people.each do |person|
-		puts person.name
+
+  @actors = TmdbCast.find(:name => search_string, :expand_results => true)
+
+	@actors.each do |actor|
+		puts actor.name
 		puts "-----------------------------"
   end
 
 
-	haml :search, :locals => {:movies => @movies, :people => @people}
+	haml :search, :locals => {:movies => @movies, :actors => @actors}
 end

@@ -7,18 +7,18 @@
 .well.well-sm
   .row
     .col-md-3.col-xs-12
-      %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
+      %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}
       %br
-      Release Date: #{movie.release_date}
+      Release Date: #{movie['release_date']}
       %br
-      Budget: #{movie.budget}
+      Budget: #{movie['budget']}
       %br
-      Revenue: #{movie.revenue}
+      Revenue: #{movie['revenue']}
       %br
-      Runtime: #{movie.runtime}
+      Runtime: #{movie['runtime']}
 
     .col-md-9
-      %h2 #{movie.title}
+      %h2 #{movie['title']}
       %br
-      %p #{movie.overview}
+      %p #{movie['overview']}
       %br

@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'bundler'
-require 'ruby-tmdb3'
 require 'themoviedb'
 require 'pp'
 

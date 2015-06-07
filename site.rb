@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler'
 require 'ruby-tmdb3'
+require 'themoviedb'
 require 'pp'
 
 Bundler.require
@@ -14,16 +15,18 @@ set :environment, :development
 
 # TMDB Configuration
 tmdb_api_key_file = File.open(File.join(File.dirname(__FILE__), "config/tmdb_api_key"), mode = "r")
-Tmdb.api_key = tmdb_api_key_file.readline
+Tmdb::API.key(tmdb_api_key_file.readline)
 
-Tmdb.default_language = "en"
+Tmdb::API.language("en")
 
 
 #Pages
 
 get '/' do
 
-	haml :home
+  @now_playing = Tmdb::Movie.now_playing
+
+	haml :home, :locals => {:now_playing => @now_playing}
 end
 
 get '/movie/:movie_id' do |movie_id|
@@ -40,9 +43,9 @@ post '/search' do
 
 	search_string = params[:search_string]
 
-	#Seearch movies and people
-	@movies = TmdbMovie.find(:title => search_string, :expand_results => false)
-	@people = TmdbCast.find(:name => search_string, :expand_results => false)
+	# Search movies and people
+  @movies = Tmdb::Movie.find(search_string)
+  @people = Tmdb::Person.find(search_string)
 
 	@movies.each do |movie|
 		puts movie.title

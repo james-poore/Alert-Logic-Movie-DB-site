@@ -48,7 +48,7 @@ get '/person/:person_id' do |person_id|
 
   person = Tmdb::Person.detail(person_id)
 
-  haml :person_info, :locals => {:person_info => person_info}
+  haml :person_info, :locals => {:person => person}
 end
 
 

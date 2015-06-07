@@ -43,7 +43,7 @@
               -people.each do |person|
                 %tr
                   %td{:style => "width=10%"}
-                    %a{:href => "/movie/#{movie.id}"}
+                    %a{:href => "/person/#{person.id}"}
                       %img{ :src => "http://image.tmdb.org/t/p/w154/#{person.profile_path}"}
                   %td
                     %a{:href => "/person/#{person.id}"} #{person.name}

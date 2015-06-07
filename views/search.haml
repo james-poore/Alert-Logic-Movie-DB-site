@@ -12,12 +12,12 @@
     .tab-content
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
         / Movie search results go here
-        %h3 Movie Results
+        %h4 Movie Results
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
-        %h3 Person Results
+        %h4 Person Results
 
 :javascript
   $(document).ready(function(){ 
-      $("#myTab li:eq(1) a").tab('show');
+      $("#search-tabs li:eq(1) a").tab('show');
   });

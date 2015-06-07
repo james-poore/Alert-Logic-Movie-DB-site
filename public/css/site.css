@@ -4,6 +4,6 @@ body {
 	padding-top: 70px !important;
 }
 
-#now-playing-heading h2 {
-	color: white !important;
+h2#now-playing-heading {
+	color: lightgrey !important;
 }

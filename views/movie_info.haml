@@ -1,0 +1,24 @@
+-movie = locals[:movie]
+-cast = locals[:cast]
+-similar_movies = locals[:similar_movies]
+-trailers = locals[:trailers]
+-images = locals[:images]
+
+.well.well-sm
+  .row
+    .col-md-3.col-xs-12
+      %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
+      %br
+      Release Date: #{movie.release_date}
+      %br
+      Budget: #{movie.budget}
+      %br
+      Revenue: #{movie.revenue}
+      %br
+      Runtime: #{movie.runtime}
+
+    .col-md-9
+      %h2 #{movie.title}
+      %br
+      %p #{movie.overview}
+      %br

@@ -39,7 +39,11 @@ get '/movie/:movie_id' do |movie_id|
   trailers = Tmdb::Movie.trailers(movie_id)
   images = Tmdb::Movie.images(movie_id)['backdrops']
 
-  haml :movie_info, :locals => {:movie => movie}
+  haml :movie_info, :locals => {:movie => movie,
+                                :cast => cast,
+                                :similar_movies => similar_movies,
+                                :trailers => trailers,
+                                :images => images}
 end
 
 

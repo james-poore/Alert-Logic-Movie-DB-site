@@ -17,8 +17,11 @@
         %br
         %ul.list-group
           / Dynamically list movie results here
-          -movies.each do |movie|
-            %li #{movie.title}
+          -if movies.length == 0
+            %h5 No movies found
+          -else
+            -movies.each do |movie|
+              %li #{movie.title}
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
@@ -26,8 +29,11 @@
         %br
         %ul.list-group
           / Dynamically list person results here
-          -people.each do |person|
-            %li #{person.name}
+          -if people.length == 0
+            %h5 No people found
+          -else
+            -people.each do |person|
+              %li #{person.name}
 
 
 :javascript

@@ -49,5 +49,5 @@ post '/search' do
 	pp @people
 
 
-	haml :search
+	haml :search, :locals => {:movies => @movies, :people => @people}
 end

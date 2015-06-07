@@ -37,7 +37,7 @@
       -if cast.length == 0
         %h5 No people found
       -else
-        %table.table.table-hover.people-table
+        %table.table.table-hover#people-table
           %tbody
           -cast.each do |actor|
             %tr.cast-row
@@ -53,5 +53,5 @@
 
 :javascript
   $(document).ready(function() {
-      $('.people-table').dataTable();
+      $('#people-table').dataTable();
   } );

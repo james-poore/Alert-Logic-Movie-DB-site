@@ -17,7 +17,7 @@
         -if movies.length == 0
           %h5 No movies found
         -else
-          %table.table.table-hover.movies-table
+          %table.table.table-hover#smovies-table
             %tbody
             -movies.each do |movie|
               %tr
@@ -48,7 +48,7 @@
           -if people.length == 0
             %h5 No people found
           -else
-            %table.table.table-hover.people-table
+            %table.table.table-hover#people-table
               %tbody
               -people.each do |person|
                 %tr
@@ -68,11 +68,10 @@
       $("#search-tabs li:eq(1) a").tab('show');
   });
 
-
   $(document).ready(function() {
-      $('.movies-table').dataTable();
+      $('#movies-table').dataTable();
   } );
 
   $(document).ready(function() {
-      $('.people-table').dataTable();
+      $('#people-table').dataTable();
   } );

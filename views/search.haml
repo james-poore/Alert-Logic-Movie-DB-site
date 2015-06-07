@@ -14,14 +14,19 @@
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
         / Movie search results go here
         %h4 Movie Results
-        %br
-        %ul.list-group
-          / Dynamically list movie results here
-          -if movies.length == 0
-            %h5 No movies found
-          -else
-            -movies.each do |movie|
-              %li.list-group-item #{movie['title']}
+        / Dynamically list movie results here
+        -if movies.length == 0
+          %h5 No movies found
+        -else
+          %table.table.table-hover
+          -movies.each do |movie|
+            %tr
+              %td{:style => "width=20%"}
+                %a{:href => "/movie/#{movie['id']}"}
+                  %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}
+              %td
+                %a{:href => "/movie/#{movie['id']}"} "#{movie.title} #{movie.realease_date}"
+
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
@@ -33,7 +38,7 @@
             %h5 No people found
           -else
             -people.each do |person|
-              %li.list-group-item #{person['name']}
+              %li.list-group-item #{person.name}
 
 
 :javascript

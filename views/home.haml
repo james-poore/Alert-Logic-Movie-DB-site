@@ -1,6 +1,6 @@
 -now_playing = locals[:now_playing]
 
-%h2#now-playing-heading Movies Now Playing
+%h2#now-playing-heading In Theaters Now
 .center-block
   -now_playing.first(20).each do |movie|
     %a{:href => "/movie/#{movie['id']}"}

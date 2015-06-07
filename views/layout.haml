@@ -51,8 +51,12 @@
           .mainThing.col-md-12.col-xs-12
             =yield
 
-    / jQuery (necessary for Bootstrap's JavaScript plugins)
+    / jQuery (necessary for Bootstrap's Javascript plugins)
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
 
-    / compiled and minified Bootstrap JavaScript
+    / compiled and minified Bootstrap Javascript
     %script{:src => "/js/bootstrap.min.js"}
+
+    / DataTables Javascript
+    %script{:src => "//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"}
+    %script{:src => "//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"}

@@ -6,8 +6,8 @@ body {
 
 h2#now-playing-heading,
   #popular-movies-heading,
-  #popular-people-heading{
-	 color: lightgrey !important;
+  #popular-people-heading {
+	   color: lightgrey !important;
   }
 
 .cast-image {

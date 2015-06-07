@@ -37,7 +37,7 @@
       -if cast.length == 0
         %h5 No people found
       -else
-        %table.table.table-hover
+        %table.table.table-hover.people-table
           %tbody
           -cast.each do |actor|
             %tr.cast-row
@@ -49,3 +49,9 @@
                 %a{:href => "/person/#{actor['id']}"} #{actor['name']}
                 as #{actor['character']}
                 %br
+
+
+:javascript
+  $(document).ready(function() {
+      $('.people-table').dataTable();
+  } );

@@ -6,9 +6,11 @@
 
 .well.well-sm
   .row
-    .col-md-3.col-xs-12
+    .col-md-3.col-sm-3.col-xs-12
       %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}
       %br
+      %br
+      %h5 Movie Facts
       Release Date: #{movie['release_date']}
       %br
       Budget: $#{movie['budget']}
@@ -16,13 +18,16 @@
       Revenue: $#{movie['revenue']}
       %br
       Runtime: #{movie['runtime']} minutes
+      %br
+      Website:
+      %a{:href => "#{movie['homepage']}"}Link
 
-    .col-md-9
+    .col-md-9.col-sm-9
       %h2 #{movie['title']}
       %br
       %p #{movie['overview']}
       %br
-      Cast:
+      %h4 Cast:
       %br
       -if cast.length == 0
         %h5 No people found

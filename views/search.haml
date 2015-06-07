@@ -34,7 +34,7 @@
                   -#     %a{:href => "/person/#{director.id}"} #{director.name}
                   %br
                   Starring:
-                  -Tmdb::Movie.casts[movie.id].first(4).each do |star|
+                  -Tmdb::Movie.casts["#{movie.id}"].first(4).each do |star|
                     %a{:href => "/person/#{star.id}"} #{star.name}
                   %br
                   #{movie.overview}

@@ -42,14 +42,14 @@ end
 
 get '/movies' do
 
-  @popular_movies = Tmdb::Movies.popular
+  @popular_movies = Tmdb::Movie.popular
 
   haml :movies, :locals => {:popular_movies => @popular_movies}
 end
 
 get '/people' do
 
-  @popular_people = Tmdb::People.popular
+  @popular_people = Tmdb::Person.popular
 
   haml :people, :locals => {:popular_people => @popular_people}
 end

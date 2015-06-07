@@ -37,22 +37,23 @@
       -if cast.length == 0
         %h5 No people found
       -else
-        %table.table.table-hover#people-table
-          %thead
-            %tr
-              %th Cast
-              %th Name
-          %tbody
-          -cast.each do |actor|
-            %tr.cast-row
-              %td
-                %a{:href => "/person/#{actor['id']}"}
-                  -if actor['profile_path']
-                    %img.cast-image{ :src => "http://image.tmdb.org/t/p/w154/#{actor['profile_path']}"}
-              %td
-                %a{:href => "/person/#{actor['id']}"} #{actor['name']}
-                as #{actor['character']}
-                %br
+        .dataTables_wrapper.form-inline.dt-bootstrap.no-footer
+          %table.table.table-hover#people-table
+            %thead
+              %tr
+                %th Cast
+                %th Name
+            %tbody
+            -cast.each do |actor|
+              %tr.cast-row
+                %td
+                  %a{:href => "/person/#{actor['id']}"}
+                    -if actor['profile_path']
+                      %img.cast-image{ :src => "http://image.tmdb.org/t/p/w154/#{actor['profile_path']}"}
+                %td
+                  %a{:href => "/person/#{actor['id']}"} #{actor['name']}
+                  as #{actor['character']}
+                  %br
 
 
 :javascript

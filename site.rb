@@ -30,12 +30,28 @@ end
 
 get '/movie/:movie_id' do |movie_id|
 
+  movie = Tmdb::Movie.detail(movie_id)
 
 end
 
 get '/person/:person_id' do |person_id|
 
+  person = Tmdb::Person.detail(person_id)
 
+end
+
+get '/movies' do
+
+  @popular_movies = Tmdb::Movies.popular
+
+  haml :movies, :locals => {:popular_movies => @popular_movies}
+end
+
+get '/people' do
+
+  @popular_people = Tmdb::People.popular
+
+  haml :people, :locals => {:popular_people => @popular_people}
 end
 
 post '/search' do
@@ -45,19 +61,6 @@ post '/search' do
 	# Search movies and people
   @movies = Tmdb::Movie.find(search_string)
   @people = Tmdb::Person.find(search_string)
-
-	@movies.each do |movie|
-		puts movie.title
-    pp movie
-		puts "-----------------------------"
-	end
-	puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	@people.each do |person|
-		puts person.name
-    pp person
-		puts "-----------------------------"
-  end
-
 
 	haml :search, :locals => {:movies => @movies, :people => @people}
 end

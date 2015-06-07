@@ -1,0 +1,7 @@
+-popular_movies = locals[:popular_movies]
+
+%h2#popular-movies-heading Popular Movies
+.center-block
+  -popular_movies.first(20).each do |movie|
+    %a{:href => "/movie/#{movie['id']}"}
+      %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}

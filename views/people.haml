@@ -1,0 +1,7 @@
+-popular_people = locals[:popular_people]
+
+%h2#popular-people-heading Popular People
+.center-block
+  -popular_people.first(20).each do |person|
+    %a{:href => "/person/#{person['id']}"}
+      %img{ :src => "http://image.tmdb.org/t/p/w154/#{person['profile_path']}"}

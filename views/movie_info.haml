@@ -11,14 +11,30 @@
       %br
       Release Date: #{movie['release_date']}
       %br
-      Budget: #{movie['budget']}
+      Budget: $#{movie['budget']}
       %br
-      Revenue: #{movie['revenue']}
+      Revenue: $#{movie['revenue']}
       %br
-      Runtime: #{movie['runtime']}
+      Runtime: #{movie['runtime']} minutes
 
     .col-md-9
       %h2 #{movie['title']}
       %br
       %p #{movie['overview']}
       %br
+      Cast:
+      %br
+      -if cast.length == 0
+            %h5 No people found
+          -else
+            %table.table.table-hover
+              %tbody
+              -cast.each do |actor|
+                %tr
+                  %td{:style => "width=10%"}
+                    %a{:href => "/person/#{actor.id}"}
+                      %img{ :src => "http://image.tmdb.org/t/p/w154/#{actor.profile_path}"}
+                  %td
+                    %a{:href => "/person/#{actor.id}"} #{actor.name}
+                    (#{actor.birthday}) - (#{actor.deathday})
+                    %br

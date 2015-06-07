@@ -48,4 +48,6 @@ post '/search' do
 	puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 	pp @people
 
+
+	haml :search
 end

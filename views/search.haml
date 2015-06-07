@@ -1,0 +1,19 @@
+:javascript
+  $(document).ready(function(){ 
+      $("#myTab li:eq(1) a").tab('show');
+  });
+
+.well.well-lg
+  %div{:role => "tabpanel"}
+    / Nav tabs
+    %ul.nav.nav-tabs#search-tabs{:role => "tablist"}
+      %li.active{:role => "presentation"}
+        %a{"aria-controls" => "movies", "data-toggle" => "tab", :href => "#movies", :role => "tab"} Movies
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "people", "data-toggle" => "tab", :href => "#people", :role => "tab"} People
+    / Tab panes
+    .tab-content
+      #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
+        / Movie search results go here
+      #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
+        / People search results go here

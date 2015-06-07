@@ -2,6 +2,6 @@ body {
 	background-image: url("/images/bg-linen.png");
 }
 
-#now-playing-heading {
+#now-playing-heading h2 {
 	color: white;
 }

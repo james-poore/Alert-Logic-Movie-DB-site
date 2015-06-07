@@ -1,6 +1,7 @@
 -now_playing = locals[:now_playing]
 
 %h2#now-playing-heading Movies Now Playing
--now_playing.first(20).each do |movie|
-  %a{:href => "http://tmdb.org/movie/#{movie['id']}"}
-    %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}
+.center-block
+  -now_playing.first(20).each do |movie|
+    %a{:href => "http://tmdb.org/movie/#{movie['id']}"}
+      %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}

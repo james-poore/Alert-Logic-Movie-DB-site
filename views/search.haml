@@ -19,13 +19,17 @@
           %h5 No movies found
         -else
           %table.table.table-hover
-          -movies.each do |movie|
-            %tr
-              %td{:style => "width=20%"}
-                %a{:href => "/movie/#{movie.id}"}
-                  %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
-              %td
-                %a{:href => "/movie/#{movie.id}"} 1"#{movie.title} #{movie.release_date}"
+            %tbody
+            -movies.each do |movie|
+              %tr
+                %td{:style => "width=20%"}
+                  %a{:href => "/movie/#{movie.id}"}
+                    %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
+                %td
+                  %a{:href => "/movie/#{movie.id}"} #{movie.title}
+                  #{movie.release_date}
+                  %br
+
 
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}

@@ -40,10 +40,11 @@
         %table.table.table-hover
           %tbody
           -cast.each do |actor|
-            %tr
-              %td{:style => "width=10%"}
+            %tr.cast-row
+              %td
                 %a{:href => "/person/#{actor['id']}"}
-                  %img#cast-image{ :src => "http://image.tmdb.org/t/p/w154/#{actor['profile_path']}"}
+                  -if actor['profile_path']
+                    %img.cast-image{ :src => "http://image.tmdb.org/t/p/w154/#{actor['profile_path']}"}
               %td
                 %a{:href => "/person/#{actor['id']}"} #{actor['name']}
                 as #{actor['character']}

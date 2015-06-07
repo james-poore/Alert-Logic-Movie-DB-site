@@ -4,8 +4,7 @@ body {
 	padding-top: 70px !important;
 }
 
-h2
-  #now-playing-heading,
+h2#now-playing-heading,
   #popular-movies-heading,
   #popular-people-heading{
 	 color: lightgrey !important;

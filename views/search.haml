@@ -21,7 +21,7 @@
             %h5 No movies found
           -else
             -movies.each do |movie|
-              %li #{movie.title}
+              %li.list-group-item #{movie.title}
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
@@ -33,7 +33,7 @@
             %h5 No people found
           -else
             -people.each do |person|
-              %li #{person.name}
+              %li.list-group-item #{person.name}
 
 
 :javascript

@@ -44,9 +44,13 @@ post '/search' do
 	@movies = TmdbMovie.find(:title => search_string, :expand_results => true)
 	@people = TmdbCast.find(:name => search_string, :expand_results => true)
 
-	pp @movies
+	@movies.each do |movie|
+		puts movie.title
+		puts "-----------------------------"
 	puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	pp @people
+	@people.each do |person|
+		puts person.name
+		puts "-----------------------------"
 
 
 	haml :search, :locals => {:movies => @movies, :people => @people}

@@ -13,7 +13,6 @@
     .tab-content
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
         / Movie search results go here
-        %h4 Movie Results
         / Dynamically list movie results here
         -if movies.length == 0
           %h5 No movies found
@@ -22,27 +21,34 @@
             %tbody
             -movies.each do |movie|
               %tr
-                %td{:style => "width=20%"}
+                %td{:style => "width=10%"}
                   %a{:href => "/movie/#{movie.id}"}
                     %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
                 %td
                   %a{:href => "/movie/#{movie.id}"} #{movie.title}
-                  #{movie.release_date}
+                  (#{movie.release_date})
                   %br
 
 
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
-        %h4 Person Results
-        %br
         %ul.list-group
           / Dynamically list person results here
           -if people.length == 0
             %h5 No people found
           -else
-            -people.each do |person|
-              %li.list-group-item #{person.name}
+            %table.table.table-hover
+              %tbody
+              -people.each do |person|
+                %tr
+                  %td{:style => "width=10%"}
+                    %a{:href => "/movie/#{movie.id}"}
+                      %img{ :src => "http://image.tmdb.org/t/p/w154/#{person.profile_path}"}
+                  %td
+                    %a{:href => "/person/#{person.id}"} #{person.name}
+                    (#{person.birthday}) - (#{person.deathday})
+                    %br
 
 
 :javascript

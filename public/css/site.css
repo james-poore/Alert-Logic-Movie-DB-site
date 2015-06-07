@@ -1,5 +1,6 @@
 body {
 	background-image: url("/images/bg-linen.png");
+	background-attachment: fixed;
 }
 
 #now-playing-heading h2 {

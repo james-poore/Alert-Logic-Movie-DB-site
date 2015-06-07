@@ -47,13 +47,13 @@ post '/search' do
   @people = Tmdb::Person.find(search_string)
 
 	@movies.each do |movie|
-		puts movie.title
+		puts movie['title']
     pp movie
 		puts "-----------------------------"
 	end
 	puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 	@people.each do |person|
-		puts person.name
+		puts person['name']
     pp person
 		puts "-----------------------------"
   end

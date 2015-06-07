@@ -47,10 +47,12 @@ post '/search' do
 	@movies.each do |movie|
 		puts movie.title
 		puts "-----------------------------"
+	end
 	puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 	@people.each do |person|
 		puts person.name
 		puts "-----------------------------"
+  end
 
 
 	haml :search, :locals => {:movies => @movies, :people => @people}

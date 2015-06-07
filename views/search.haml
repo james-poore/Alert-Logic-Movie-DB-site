@@ -5,9 +5,9 @@
     / Nav tabs
     %ul.nav.nav-tabs#search-tabs{:role => "tablist"}
       %li.active{:role => "presentation"}
-        %a{"aria-controls" => "movies", "data-toggle" => "tab", :href => "#movies", :role => "tab"} Movies
+        %a{"aria-controls" => "movies", "data-toggle" => "tab", :href => "#movies-tab-pane", :role => "tab"} Movies
       %li{:role => "presentation"}
-        %a{"aria-controls" => "people", "data-toggle" => "tab", :href => "#people", :role => "tab"} People
+        %a{"aria-controls" => "people", "data-toggle" => "tab", :href => "#people-tab-pane", :role => "tab"} People
     / Tab panes
     .tab-content
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}

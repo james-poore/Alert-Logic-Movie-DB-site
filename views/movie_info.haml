@@ -4,16 +4,21 @@
 -trailers = locals[:trailers]
 -images = locals[:images]
 
+-pp movie
+-pp cast
+-pp trailers
+-pp images
+
 .well.well-sm
   .row
     .col-md-3.col-sm-3.col-xs-12
       %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}
       %br
       %br
-      %h5 Movie Facts
+      %h4 Movie Facts
       Release Date: #{movie['release_date']}
       %br
-      Budget: $#{movie['budget']}
+      Budget:  $#{movie['budget']}
       %br
       Revenue: $#{movie['revenue']}
       %br

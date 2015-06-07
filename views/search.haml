@@ -27,11 +27,11 @@
                 %td
                   %a{:href => "/movie/#{movie.id}"} #{movie.title}
                   (#{movie.release_date})
-                  %br
-                  Director: 
-                  -Tmdb::Movie.crew[movie.id].each do |crew|
-                    -if crew['department'] == 'Directing' do |director|
-                      %a{:href => "/person/#{director.id}"} #{director.name}
+                  -# %br
+                  -# Director: 
+                  -# -Tmdb::Movie.crew[movie.id].each do |crew|
+                  -#   -if crew['department'] == 'Directing' do |director|
+                  -#     %a{:href => "/person/#{director.id}"} #{director.name}
                   %br
                   Starring:
                   -Tmdb::Movie.casts[movie.id].first(4).each do |star|

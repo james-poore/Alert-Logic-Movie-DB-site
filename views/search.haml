@@ -1,7 +1,4 @@
-:javascript
-  $(document).ready(function(){ 
-      $("#myTab li:eq(1) a").tab('show');
-  });
+
 
 .well.well-lg
   %div{:role => "tabpanel"}
@@ -19,3 +16,8 @@
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
         %h3 Person Results
+
+:javascript
+  $(document).ready(function(){ 
+      $("#myTab li:eq(1) a").tab('show');
+  });

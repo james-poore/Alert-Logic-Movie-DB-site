@@ -29,14 +29,10 @@
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li.active
-              %a{:href => "#"}
-                Link
-                %span.sr-only (current)
             %li
-              %a{:href => "#"} Movies
+              %a{:href => "/movies"} Movies
             %li
-              %a{:href => "#"} People
+              %a{:href => "/people"} People
           %form.navbar-form.navbar-right{:role => "search", :action => "/search", :method => "post", :enctype => "multipart/form-data"}
             .form-group
               %input.form-control#nav-search-bar{:placeholder => "Search", :name => "search_string", :type => "text"}

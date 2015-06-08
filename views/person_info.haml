@@ -44,5 +44,5 @@
                     %img.credits-image{ :src => "http://image.tmdb.org/t/p/w154/#{credit['poster_path']}"}
               %td
                 #{credit['character']} in 
-                %a{:href => "/#{credit['media_type']}/#{credit['id']}"} #{credit['name']}
+                %a{:href => "/#{credit['media_type']}/#{credit['id'].to_i}"} #{credit['name']}
                 %br

@@ -11,7 +11,18 @@
       %br
       %br
       %h4 Show Facts
-      Release Date: #{show['release_date']}
+      -if show['in_production']
+        In Production: Yes
+      -else
+        In Production: No
+      %br
+      # of Seasons: #{show['number_of_seasons']}
+      %br
+      # of Episodes: #{show['number_of_episodes']}
+      %br
+      First Air Date: #{show['first_air_date']}
+      %br
+      Last Air Date: #{show['last_air_date']}
       %br
       Website:
       %a{:href => "#{show['homepage']}"}Link

@@ -11,6 +11,7 @@ h2#now-playing-heading,
 	   color: lightgrey !important;
   }
 
-.cast-image {
+.cast-image,
+.credits-image {
   height: 100px;
 }

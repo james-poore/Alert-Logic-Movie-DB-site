@@ -29,7 +29,7 @@
                     %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
                 %td
                   %a{:href => "/movie/#{movie.id}"} #{movie.title}
-                  (#{movie.release_date})
+                  (#{movie.release_date.split('-').first})
                   -# %br
                   -# Director: 
                   -# -Tmdb::Movie.crew[movie.id].each do |crew|

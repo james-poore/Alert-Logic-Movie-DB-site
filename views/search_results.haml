@@ -9,6 +9,8 @@
         %a{"aria-controls" => "movies", "data-toggle" => "tab", :href => "#movies-tab-pane", :role => "tab"} Movies
       %li{:role => "presentation"}
         %a{"aria-controls" => "people", "data-toggle" => "tab", :href => "#people-tab-pane", :role => "tab"} People
+      %li{:role => "presentation"}
+        %a{"aria-controls" => "test", "data-toggle" => "tab", :href => "#test-tab-pane", :role => "tab"} Test
     / Tab panes
     .tab-content
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
@@ -21,7 +23,7 @@
             %tbody
             -movies.each do |movie|
               %tr
-                %td{:style => "width=10%"}
+                %td
                   %a{:href => "/movie/#{movie.id}"}
                     %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
                 %td
@@ -43,22 +45,34 @@
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
-        %ul.list-group
-          / Dynamically list person results here
-          -if people.length == 0
-            %h5 No people found
-          -else
-            %table.table.table-hover#people-table
-              %tbody
-              -people.each do |person|
-                %tr
-                  %td{:style => "width=10%"}
-                    %a{:href => "/person/#{person.id}"}
-                      %img{ :src => "http://image.tmdb.org/t/p/w154/#{person.profile_path}"}
-                  %td
-                    %a{:href => "/person/#{person.id}"} #{person.name}
-                    (#{person.birthday}) - (#{person.deathday})
-                    %br
+        / Dynamically list person results here
+        -if people.length == 0
+          %h5 No people found
+        -else
+          %table.table.table-hover#people-table
+            %tbody
+            -people.each do |person|
+              %tr
+                %td
+                  %a{:href => "/person/#{person.id}"}
+                    %img{ :src => "http://image.tmdb.org/t/p/w154/#{person.profile_path}"}
+                %td
+                  %a{:href => "/person/#{person.id}"} #{person.name}
+                  (#{person.birthday}) - (#{person.deathday})
+                  %br
+
+      #test-tab-pane.tab-pane.fade{:role => "tabpanel"}
+        %table.table.table-hover#example
+          %thead
+            %tr
+              %th Sites
+          %tbody
+            %tr
+              %td SitePoint
+            %tr
+              %td Learnable
+            %tr
+              %td Flippa
 
 
 :javascript
@@ -66,12 +80,7 @@
   // Javascript for changing between tabs
   $(document).ready(function(){ 
       $("#search-tabs li:eq(1) a").tab('show');
-  });
-
-  $(document).ready(function() {
       $('#movies-table').dataTable();
-  } );
-
-  $(document).ready(function() {
       $('#people-table').dataTable();
-  } );
+      $("#example").dataTable();
+  });

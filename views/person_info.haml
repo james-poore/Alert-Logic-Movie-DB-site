@@ -37,12 +37,17 @@
               %th Name
           %tbody
           -credits.each do |credit|
-            %tr.credits-row
-              %td
-                %a{:href => "/#{credit['media_type']}/#{credit['id'].to_i}"}
-                  -if credit['poster_path']
-                    %img.credits-image{ :src => "http://image.tmdb.org/t/p/w154/#{credit['poster_path']}"}
-              %td
-                #{credit['character']} in 
-                %a{:href => "/#{credit['media_type']}/#{credit['id'].to_i}"} #{credit['name']}
-                %br
+            -unless credit['character'].empty? || credit['media_type'].empty?
+              -if credit['media_type'] == 'movie'
+                -link = "/movie/#{credit['id']}"
+              -elsif credit['media_type'] == 'tv'
+                -link = "/tv/#{credit['id']}"
+              %tr.credits-row
+                %td
+                  %a{:href => "#{link}"}
+                    -if credit['poster_path']
+                      %img.credits-image{ :src => "http://image.tmdb.org/t/p/w154/#{credit['poster_path']}"}
+                %td
+                  #{credit['character']} in 
+                  %a{:href => "#{link}"} #{credit['name']}
+                  %br

@@ -1,6 +1,8 @@
 -person = locals[:person]
+-credits = locals[:credits]
 
 -pp person
+-pp credits
 
 .well.well-sm
   .row
@@ -8,10 +10,10 @@
       %img{ :src => "http://image.tmdb.org/t/p/w154/#{person['profile_path']}"}
       %br
       %br
-      %h4 Person Facts
+      %h4 Facts
       Place of Birth: #{person['place_of_birth']}
       %br
-      Birthday:  $#{person['birthday']}
+      Birthday:  #{person['birthday']}
       %br
       Popularity: #{person['popularity'].round(2)}
       %br

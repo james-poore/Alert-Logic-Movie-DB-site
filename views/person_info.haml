@@ -35,8 +35,6 @@
               %th Name
           %tbody
           -credits.last.each do |credit|
-            -pp credit
-            -puts "=================================="
 
             -unless credit['character'].empty? || credit['media_type'].empty?
               %tr.credits-row

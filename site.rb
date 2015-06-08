@@ -51,7 +51,7 @@ end
 get '/tv/:show_id' do |show_id|
 
   show = Tmdb::TV.detail(show_id)
-  cast = Tmdb::TV.casts(show_id)
+  cast = Tmdb::TV.cast(show_id)
   # trailers = Tmdb::TV.trailers(show_id)
   images = Tmdb::TV.images(show_id)['backdrops']
 
@@ -85,8 +85,6 @@ end
 get '/tv' do
 
   @popular_shows = Tmdb::TV.popular
-
-  pp @popular_shows
 
   haml :shows, :locals => {:popular_shows => @popular_shows}
 end

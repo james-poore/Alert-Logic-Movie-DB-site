@@ -34,7 +34,7 @@
               %th credits
               %th Name
           %tbody
-          -creditseach do |credit|
+          -credits.each do |credit|
 
             -unless credit['character'].empty? || credit['media_type'].empty?
               %tr.credits-row

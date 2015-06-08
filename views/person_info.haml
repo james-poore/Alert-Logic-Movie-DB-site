@@ -32,7 +32,7 @@
           %tbody
           -credits.each do |credit|
 
-            -unless credit['character'].empty? || credit['media_type'].empty?
+            -unless credit['character'].empty? || credit['character'] == "n.a." || credit['media_type'].empty?
               %tr.credits-row
                 %td
                   %a{:href => "/#{credit['media_type']}/#{credit['id']}"}
@@ -40,5 +40,8 @@
                       %img.credits-image{ :src => "http://image.tmdb.org/t/p/w154/#{credit['poster_path']}"}
                 %td
                   #{credit['character']} in 
-                  %a{:href => "/#{credit['media_type']}/#{credit['id']}"} #{credit['name']}
+                  -if credit['media_type'] == 'movie'
+                    %a{:href => "/#{credit['media_type']}/#{credit['id']}"} #{credit['title']}
+                  -elsif credit['media_type'] == 'tv'
+                    %a{:href => "/#{credit['media_type']}/#{credit['id']}"} #{credit['name']}
                   %br

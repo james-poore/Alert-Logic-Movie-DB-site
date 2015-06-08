@@ -86,10 +86,12 @@
 
 
 :javascript
+
+  $('#movies-table').dataTable();
+  $('#people-table').dataTable();
+  $("#example").dataTable();
+
   // Javascript for changing between tabs
   $(document).ready(function(){ 
       $("#search-tabs li:eq(1) a").tab('show');
-      $('#movies-table').dataTable();
-      $('#people-table').dataTable();
-      $("#example").dataTable();
   });

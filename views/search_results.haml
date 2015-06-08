@@ -72,10 +72,10 @@
                 %tr
                   %td
                     %a{:href => "/movie/#{movie.id}"} #{movie.title}
-                      -# %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
+                    -# %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}
                     }
                   %td
-                    %a{:href => "/movie/#{movie.id}"} #{movie.title}
+                    %a{:href => "/movie/#{movie.id}"}#{movie.title}
                     (#{movie.release_date})
                     %br
                     #{movie.overview}

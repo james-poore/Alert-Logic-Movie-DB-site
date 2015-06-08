@@ -9,8 +9,7 @@
         %a{"aria-controls" => "movies", "data-toggle" => "tab", :href => "#movies-tab-pane", :role => "tab"} Movies
       %li{:role => "presentation"}
         %a{"aria-controls" => "people", "data-toggle" => "tab", :href => "#people-tab-pane", :role => "tab"} People
-      %li{:role => "presentation"}
-        %a{"aria-controls" => "test", "data-toggle" => "tab", :href => "#test-tab-pane", :role => "tab"} Test
+
     / Tab panes
     .tab-content
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
@@ -61,33 +60,9 @@
                   (#{person.birthday}) - (#{person.deathday})
                   %br
 
-      #test-tab-pane.tab-pane.fade{:role => "tabpanel"}
-        %table.table.table-hover#example
-          %thead
-            %tr
-              %th Sites
-          %tbody
-            -movies.each do |movie|
-              %tr
-                %td
-                  %a{:href => "/movie/#{movie.id}"}#{movie.title}
-                  -# %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie.poster_path}"}}
-                %td
-                  %a{:href => "/movie/#{movie.id}"}#{movie.title}
-                  (#{movie.release_date})
-                  -# %br
-                  -# #{movie.overview}
-
-%script{:charset => "utf8", :src => "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js", :type => "text/javascript"}
-%script{:charset => "utf8", :src => "http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.10.7/jquery.dataTables.min.js", :type => "text/javascript"}
-
 
 
 :javascript
-
-  $('#movies-table').dataTable();
-  $('#people-table').dataTable();
-  $("#example").dataTable();
 
   // Javascript for changing between tabs
   $(document).ready(function(){ 

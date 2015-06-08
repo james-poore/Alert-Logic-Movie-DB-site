@@ -80,9 +80,13 @@ get '/movies' do
   haml :movies, :locals => {:popular_movies => @popular_movies}
 end
 
+
+
 get '/tv' do
 
-  @popular_movies = Tmdb::TV.popular
+  @popular_shows = Tmdb::TV.popular
+
+  pp @popular_shows
 
   haml :shows, :locals => {:popular_shows => @popular_shows}
 end

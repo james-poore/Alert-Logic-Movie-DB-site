@@ -39,7 +39,7 @@
           -credits.each do |credit|
             %tr.credits-row
               %td
-                %a{:href => "/#{credit['media_type']}/#{credit['id']}"}
+                %a{:href => "/#{credit['media_type']}/#{credit['id'].to_i}"}
                   -if credit['poster_path']
                     %img.credits-image{ :src => "http://image.tmdb.org/t/p/w154/#{credit['poster_path']}"}
               %td

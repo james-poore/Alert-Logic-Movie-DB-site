@@ -2,7 +2,6 @@
 -credits = locals[:credits]
 
 -pp person
--pp credits
 
 .well.well-sm
   .row
@@ -37,6 +36,9 @@
               %th Name
           %tbody
           -credits.each do |credit|
+            -pp credit
+            -puts "=================================="
+
             -unless credit['character'].empty? || credit['media_type'].empty?
               -if credit['media_type'] == 'movie'
                 -link = "/movie/#{credit['id']}"

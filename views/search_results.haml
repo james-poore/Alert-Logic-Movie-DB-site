@@ -1,5 +1,6 @@
 -movies = locals[:movies]
 -people = locals[:people]
+-shows = locals[:shows]
 
 .well.well-sm
   %div{:role => "tabpanel"}
@@ -8,13 +9,14 @@
       %li.active{:role => "presentation"}
         %a{"aria-controls" => "movies", "data-toggle" => "tab", :href => "#movies-tab-pane", :role => "tab"} Movies
       %li{:role => "presentation"}
+        %a{"aria-controls" => "tv", "data-toggle" => "tab", :href => "#tv-tab-pane", :role => "tab"} TV Shows
+      %li{:role => "presentation"}
         %a{"aria-controls" => "people", "data-toggle" => "tab", :href => "#people-tab-pane", :role => "tab"} People
 
     / Tab panes
     .tab-content
       #movies-tab-pane.tab-pane.fade.in.active{:role => "tabpanel"}
         / Movie search results go here
-        / Dynamically list movie results here
         -if movies.length == 0
           %h5 No movies found
         -else
@@ -40,11 +42,27 @@
                   %br
                   #{movie.overview}
 
-
+      #tv-tab-pane.tab-pane.fade{:role => "tabpanel"}
+        / TV Show search results go here
+        -if shows.length == 0
+          %h5 No TV shows found
+        -else
+          %table.table.table-hover#shows-table
+            %tbody
+            -shows.each do |show|
+              %tr
+                %td
+                  %a{:href => "/tv/#{show.id}"}
+                    %img{ :src => "http://image.tmdb.org/t/p/w154/#{show.poster_path}"}
+                %td
+                  %a{:href => "/tv/#{show.id}"} #{show.title}
+                  (#{show.release_date})
+                  %br
+                  %br
+                  #{show.overview}
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
-        / Dynamically list person results here
         -if people.length == 0
           %h5 No people found
         -else

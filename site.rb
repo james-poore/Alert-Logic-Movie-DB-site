@@ -48,6 +48,21 @@ end
 
 
 
+get '/tv/:show_id' do |show_id|
+
+  show = Tmdb::TV.detail(show_id)
+  cast = Tmdb::TV.casts(show_id)
+  # trailers = Tmdb::TV.trailers(show_id)
+  images = Tmdb::TV.images(show_id)['backdrops']
+
+  haml :show_info, :locals => {:show => show,
+                               :cast => cast,
+                               # :trailers => trailers,
+                               :images => images}
+end
+
+
+
 get '/person/:person_id' do |person_id|
 
   person = Tmdb::Person.detail(person_id)
@@ -63,6 +78,13 @@ get '/movies' do
   @popular_movies = Tmdb::Movie.popular
 
   haml :movies, :locals => {:popular_movies => @popular_movies}
+end
+
+get '/tv' do
+
+  @popular_movies = Tmdb::TV.popular
+
+  haml :shows, :locals => {:popular_shows => @popular_shows}
 end
 
 
@@ -83,6 +105,7 @@ post '/search' do
 	# Search movies and people
   @movies = Tmdb::Movie.find(search_string)
   @people = Tmdb::Person.find(search_string)
+  @shows = Tmdb::TV.find(search_string)
 
-	haml :search_results, :locals => {:movies => @movies, :people => @people}
+	haml :search_results, :locals => {:movies => @movies, :people => @people, :shows => @shows}
 end

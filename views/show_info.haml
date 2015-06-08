@@ -1,37 +1,26 @@
--movie = locals[:movie]
+-show = locals[:show]
 -cast = locals[:cast]
--similar_movies = locals[:similar_movies]
--trailers = locals[:trailers]
 -images = locals[:images]
 
--pp movie
--pp cast
--pp trailers
--pp images
+-pp show
 
 .well.well-sm
   .row
     .col-md-3.col-sm-3.col-xs-12
-      %img{ :src => "http://image.tmdb.org/t/p/w154/#{movie['poster_path']}"}
+      %img{ :src => "http://image.tmdb.org/t/p/w154/#{show['poster_path']}"}
       %br
       %br
-      %h4 Movie Facts
-      Release Date: #{movie['release_date']}
-      %br
-      Budget:  $#{movie['budget']}
-      %br
-      Revenue: $#{movie['revenue']}
-      %br
-      Runtime: #{movie['runtime']} minutes
+      %h4 Show Facts
+      Release Date: #{show['release_date']}
       %br
       Website:
-      %a{:href => "#{movie['homepage']}"}Link
+      %a{:href => "#{show['homepage']}"}Link
       %br
 
     .col-md-9.col-sm-9
-      %h2 #{movie['title']}
+      %h2 #{show['title']}
       %br
-      %p #{movie['overview']}
+      %p #{show['overview']}
       %br
       %h4 Cast:
       -if cast.length == 0

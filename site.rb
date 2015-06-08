@@ -66,7 +66,7 @@ end
 get '/person/:person_id' do |person_id|
 
   person = Tmdb::Person.detail(person_id)
-  credits = Tmdb::Person.credits(person_id)
+  credits = Tmdb::Person.credits(person_id)['cast']
 
   puts credits.class
 

@@ -16,7 +16,6 @@ set :environment, :production
 tmdb_api_key_file = File.open(File.join(File.dirname(__FILE__), "config/tmdb_api_key"), mode = "r")
 Tmdb::Api.key(tmdb_api_key_file.readline)
 Tmdb::Api.language("en")
-Tmdb::Api.adult
 
 configuration = Tmdb::Configuration.new
 

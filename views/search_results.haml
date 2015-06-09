@@ -23,7 +23,6 @@
           %table.table.table-hover#movies-table
             %tbody
             -movies.each do |movie|
-              -pp movie
               %tr
                 %td
                   %a{:href => "/movie/#{movie.id}"}
@@ -31,15 +30,7 @@
                 %td
                   %a{:href => "/movie/#{movie.id}"} #{movie.title}
                   (#{movie.release_date.split('-').first unless movie.release_date.nil?})
-                  -# %br
-                  -# Director: 
-                  -# -Tmdb::Movie.crew[movie.id].each do |crew|
-                  -#   -if crew['department'] == 'Directing' do |director|
-                  -#     %a{:href => "/person/#{director.id}"} #{director.name}
                   %br
-                  -# Starring:
-                  -# -Tmdb::Movie.casts["#{movie.id}"].first(4).each do |star|
-                  -#   %a{:href => "/person/#{star.id}"} #{star.name}
                   %br
                   #{movie.overview}
 
@@ -51,15 +42,12 @@
           %table.table.table-hover#shows-table
             %tbody
             -shows.each do |show|
-              -pp show
               %tr
                 %td
                   %a{:href => "/tv/#{show.id}"}
                     %img{ :src => "http://image.tmdb.org/t/p/w154/#{show.poster_path}"}
                 %td
                   %a{:href => "/tv/#{show.id}"} #{show.name}
-                  %br
-                  #{show.overview}
 
       #people-tab-pane.tab-pane.fade{:role => "tabpanel"}
         / People search results go here
@@ -69,14 +57,12 @@
           %table.table.table-hover#people-table
             %tbody
             -people.each do |person|
-              -pp person
               %tr
                 %td
                   %a{:href => "/person/#{person.id}"}
                     %img{ :src => "http://image.tmdb.org/t/p/w154/#{person.profile_path}"}
                 %td
                   %a{:href => "/person/#{person.id}"} #{person.name}
-                  (#{person.birthday}) - (#{person.deathday})
                   %br
 
 

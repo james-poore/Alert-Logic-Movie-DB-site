@@ -50,6 +50,7 @@
           %table.table.table-hover#shows-table
             %tbody
             -shows.each do |show|
+              -pp show
               %tr
                 %td
                   %a{:href => "/tv/#{show.id}"}
@@ -67,6 +68,7 @@
           %table.table.table-hover#people-table
             %tbody
             -people.each do |person|
+              -pp person
               %tr
                 %td
                   %a{:href => "/person/#{person.id}"}

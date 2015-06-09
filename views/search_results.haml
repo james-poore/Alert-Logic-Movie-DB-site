@@ -23,6 +23,7 @@
           %table.table.table-hover#movies-table
             %tbody
             -movies.each do |movie|
+              -pp movie
               %tr
                 %td
                   %a{:href => "/movie/#{movie.id}"}
